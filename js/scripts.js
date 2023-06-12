@@ -30,24 +30,33 @@ form.addEventListener('submit', function (event) {
 
   appendToDom(newPlace);
 
+  name.value.innerText = null;
+  landmark.innerText = null;
+  season.innerText = null;
+  activities.innerText = null;
+  emptySpace.innterText = null;
+
 });
 
 function appendToDom(place) {
   let ul = document.createElement('ul')
   let li1 = document.createElement('li')
-  li1.innerText = place.name;
+  li1.innerText = 'Name of City: ' + place.name;
   let li2 = document.createElement('li')
-  li2.innerText = place.landmark;
+  li2.innerText = 'Landmark: ' + place.landmark;
   let li3 = document.createElement('li')
-  li3.innerText = place.season;
+  li3.innerText = 'Season: ' + place.season;
   let li4 = document.createElement('li')
-  li4.innerText = place.activities;
+  li4.innerText = 'Activities: ' + place.activities;
+  let
 
 
-  document.getElementById('output').append(li1);
+    document.getElementById('output').append(li1);
   document.getElementById('output').append(li2);
   document.getElementById('output').append(li3);
   document.getElementById('output').append(li4);
+
+
 
   // document.getElementById('city-name').innerText = name;
   // document.getElementById('city-landmark').innerText = landmark;
