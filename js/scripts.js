@@ -6,7 +6,7 @@ let form = document.querySelector('form');
 
 console.log('loaded');
 
-//User Logic:
+//Buisness Logic:
 function Place(name, landmark, season, activities) {
   this.name = name;
   this.landmark = landmark;
@@ -16,6 +16,7 @@ function Place(name, landmark, season, activities) {
 
 let places = [];
 
+//User Logic:
 form.addEventListener('submit', function (event) {
   event.preventDefault();
   //get the user input and store it in the variables
@@ -24,13 +25,29 @@ form.addEventListener('submit', function (event) {
   season = document.getElementById('input-season').value;
   activities = document.getElementById('input-activities').value;
 
-  // replace the <span> value
+  let newPlace = new Place(name, landmark, season, activities);
+  places.push(newPlace)
+
+  appendToDom(newPlace);
+
+})
+
+function appendToDom() {
+  places.forEach(function (place) {
+    let ul = document.createElement('ul')
+    let li = document.createElement('li')
+    li.append(place);
+    document.getElementById('output').append(li);
+  })
+
   document.getElementById('city-name').innerText = name;
   document.getElementById('city-landmark').innerText = landmark;
   document.getElementById('city-season').innerText = season;
   document.getElementById('city-activities').innerText = activities;
+}
 
-  let newPlace = new Place(name, landmark, season, activities);
-  places.push(newPlace)
-})
+
+
+
+
 
