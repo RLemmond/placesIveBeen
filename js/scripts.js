@@ -30,20 +30,29 @@ form.addEventListener('submit', function (event) {
 
   appendToDom(newPlace);
 
-})
+});
 
-function appendToDom() {
-  places.forEach(function (place) {
-    let ul = document.createElement('ul')
-    let li = document.createElement('li')
-    li.append(place);
-    document.getElementById('output').append(li);
-  })
+function appendToDom(place) {
+  let ul = document.createElement('ul')
+  let li1 = document.createElement('li')
+  li1.innerText = place.name;
+  let li2 = document.createElement('li')
+  li2.innerText = place.landmark;
+  let li3 = document.createElement('li')
+  li3.innerText = place.season;
+  let li4 = document.createElement('li')
+  li4.innerText = place.activities;
 
-  document.getElementById('city-name').innerText = name;
-  document.getElementById('city-landmark').innerText = landmark;
-  document.getElementById('city-season').innerText = season;
-  document.getElementById('city-activities').innerText = activities;
+
+  document.getElementById('output').append(li1);
+  document.getElementById('output').append(li2);
+  document.getElementById('output').append(li3);
+  document.getElementById('output').append(li4);
+
+  // document.getElementById('city-name').innerText = name;
+  // document.getElementById('city-landmark').innerText = landmark;
+  // document.getElementById('city-season').innerText = season;
+  // document.getElementById('city-activities').innerText = activities;
 }
 
 
@@ -53,7 +62,25 @@ function appendToDom() {
 
 
 
-//Richard's Code Please don't delete :)
+
+//Richard's Testing Code(Notes) Please don't delete :)
+
+/* function appendToDom(NewPlace){
+  let ul = document.createElement('ul');
+
+//Array of properties
+  let properties = ['name', 'landmark', 'season', 'activities'];
+
+//Loop through properties
+  properties.forEach (prop => {
+    let li = document.createElement('li');
+    li.innerHTML = '${prop.charAt(0).toUpperCase() + prop.slice(1)}: ${NewPlace[prop]}';
+    ul.append(li);
+  })
+    document.getElementById('output').append(ul);
+} */
+
+
 // function appendToDom(NewPlace){
 // document.getElementById('output').innerHTML = '';
 // let ul = document.createElement('ul')
