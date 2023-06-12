@@ -2,6 +2,7 @@ let name;
 let landmark;
 let season;
 let activities;
+
 let form = document.querySelector('form');
 
 console.log('loaded');
@@ -12,6 +13,7 @@ function Place(name, landmark, season, activities) {
   this.landmark = landmark;
   this.season = season;
   this.activities = activities;
+
 }
 
 let places = [];
@@ -25,16 +27,17 @@ form.addEventListener('submit', function (event) {
   season = document.getElementById('input-season').value;
   activities = document.getElementById('input-activities').value;
 
+
   let newPlace = new Place(name, landmark, season, activities);
   places.push(newPlace)
 
   appendToDom(newPlace);
 
-  name.value.innerText = null;
+  name.innerText = null;
   landmark.innerText = null;
   season.innerText = null;
   activities.innerText = null;
-  emptySpace.innterText = null;
+
 
 });
 
@@ -42,19 +45,23 @@ function appendToDom(place) {
   let ul = document.createElement('ul')
   let li1 = document.createElement('li')
   li1.innerText = 'Name of City: ' + place.name;
+  ul.append(li1);
   let li2 = document.createElement('li')
   li2.innerText = 'Landmark: ' + place.landmark;
+  ul.append(li2);
   let li3 = document.createElement('li')
   li3.innerText = 'Season: ' + place.season;
+  ul.append(li3);
   let li4 = document.createElement('li')
   li4.innerText = 'Activities: ' + place.activities;
-  let
+  ul.append(li4);
 
 
-    document.getElementById('output').append(li1);
-  document.getElementById('output').append(li2);
-  document.getElementById('output').append(li3);
-  document.getElementById('output').append(li4);
+  document.getElementById('output').append(ul);
+  // document.getElementById('output').append(li2);
+  // document.getElementById('output').append(li3);
+  // document.getElementById('output').append(li4);
+  // document.getElementById('output').append(li5);
 
 
 
