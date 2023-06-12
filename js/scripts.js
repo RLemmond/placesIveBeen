@@ -33,21 +33,40 @@ form.addEventListener('submit', function (event) {
 })
 
 function appendToDom() {
-  places.forEach(function (place) {
-    let ul = document.createElement('ul')
-    let li = document.createElement('li')
-    li.append(place);
-    document.getElementById('output').append(li);
-  })
+  function appendToDom(place) {
+    let ul = document.querySelector("#output ul"); // Select the ul element
 
-  document.getElementById('city-name').innerText = name;
-  document.getElementById('city-landmark').innerText = landmark;
-  document.getElementById('city-season').innerText = season;
-  document.getElementById('city-activities').innerText = activities;
+    let cityNameLi = document.createElement('li');
+    cityNameLi.innerHTML = `Name of City: <span>${place.name}</span>`;
+    ul.appendChild(cityNameLi);
+
+    let landmarkLi = document.createElement('li');
+    landmarkLi.innerHTML = `Landmark of City: <span>${place.landmark}</span>`;
+    ul.appendChild(landmarkLi);
+
+    let seasonLi = document.createElement('li');
+    seasonLi.innerHTML = `Time of Year: <span>${place.season}</span>`;
+    ul.appendChild(seasonLi);
+
+    let activitiesLi = document.createElement('li');
+    activitiesLi.innerHTML = `Activities: <span>${place.activities}</span>`;
+    ul.appendChild(activitiesLi);
+  }
 }
 
 
 
+// places.forEach(function (place) {
+//   let ul = document.createElement('ul')
+//   let li = document.createElement('li')
+//   li.append(place);
+//   document.getElementById('output').append(li);
+// })
+
+// document.getElementById('city-name').innerText = name;
+// document.getElementById('city-landmark').innerText = landmark;
+// document.getElementById('city-season').innerText = season;
+// document.getElementById('city-activities').innerText = activities;
 
 
 
