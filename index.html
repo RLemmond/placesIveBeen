@@ -2,12 +2,8 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link href="css/styles.css" rel="stylsheet" type="text/css">
-
   <title>Places you've been</title>
+  <link rel="stylesheet" href="css/styles.css">
 
 </head>
 
@@ -15,29 +11,29 @@
 
   <div class="container">
     <h1>Places we've been</h1>
-    <h2>ADD PLACE:</h2>
+    <h2>Add Place:</h2>
     <form>
-      <label for="newCity">Name of city</label>
+      <label for="newCity">Name of city:</label>
       <input type='text' id="input-name" name="newCityName"><br>
-      <label for="newLandmark">Name of Landmark</label>
+      <label for="newLandmark">Name of Landmark:</label>
       <input type='text' id="input-landmark" name="newLandmarkName"><br>
-      <label for="newSeason">Time of Year</label>
+      <label for="newSeason">Time of Year:</label>
       <input type='text' id="input-season" name="newSeasonName"><br>
-      <label for="newMemories">Activites</label>
+      <label for="newMemories">Activites:</label>
       <input type='text' id="input-activities" name="newMemoriesName">
-      <br>
-      <br>
       <br>
       <button type="submitButton">Submit</button>
     </form>
 
-    <ul>
-      <h3>Here are places I've been</h3>
-      <li>Name of City: <span id="city-name"> X</span></li>
-      <li>Landmark of City: <span id="city-landmark">X</span></li>
-      <li>Time of Year: <span id="city-season"> X</span></li>
-      <li>Activities: <span id="city-activities"> X</span></li>
-    </ul>
+    <div id="output">
+      <ul>
+        <h3>Here are places I've been:</h3>
+        <li>Name of City: <span id="city-name"> X</span></li>
+        <li>Landmark of City: <span id="city-landmark">X</span></li>
+        <li>Time of Year: <span id="city-season"> X</span></li>
+        <li>Activities: <span id="city-activities"> X</span></li>
+      </ul>
+    </div>
 
     <script src="js/scripts.js"></script>
 </body>
