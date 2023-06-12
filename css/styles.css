@@ -61,7 +61,10 @@ label {
   padding: 30px 40px;
 }
 
-
 .hidden {
   display: none;
+}
+
+#emptyspace {
+  display: hidden;
 }
